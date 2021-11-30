@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-executor-back
+  labels:
+    app: python-executor
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-executor-back
+  template:
+    metadata:
+      labels:
+        app: python-executor-back
+    spec:
+      containers:
+        - name: python-executor-back
+          image: antsz2526/pythonexecutor:v2
+          ports:
+            - containerPort: 5000
