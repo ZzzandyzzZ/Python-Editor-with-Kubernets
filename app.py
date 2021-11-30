@@ -3,6 +3,7 @@ from flask_cors import CORS
 from io import StringIO
 import sys
 import json
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -20,6 +21,8 @@ def executePython():
     redirected_output = sys.stdout = StringIO()
     error= ""
     try:
+        arr = [i for i in range(10000)]
+        time.sleep(1)
         exec(json.loads(request.data))
     except Exception as e:
         sys.stdout = old_stdout

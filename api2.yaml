@@ -16,12 +16,14 @@ spec:
     spec:
       containers:
         - name: python-executor-back
-          image: antsz2526/pythonexecutor:v2
+          image: antsz2526/pythonexecutor:v3
           ports:
             - containerPort: 5000
+          imagePullPolicy: Always
           resources:
-            requests: "40Mi"
-            cpu: "30m"
-          limits:
-            memory: "80Mi"
-            cpu: "50m"
+            requests:
+              memory: "40Mi"
+              cpu: "30m"
+            limits:
+              memory: "80Mi"
+              cpu: "50m"
