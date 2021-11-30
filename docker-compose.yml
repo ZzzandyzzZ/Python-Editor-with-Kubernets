@@ -1,8 +1,7 @@
 version: '3.7'
 services:
   python_executor:
-    image: pythonexecutor
+    image: antsz2526/pythonexecutor:v2
     ports:
       - "5000:5000"
-    volumes:
-      - .:/app
+    
